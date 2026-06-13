@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>AI 넥서스 | AI 기술 소개 및 실전 활용 정보 가이드</title>
+    <meta name="description" content="인공지능 어렵지 않습니다. 최신 AI 트렌드부터 업무 효율을 200% 높여주는 실전 프롬프트, AI 툴 활용법까지 한눈에 확인하세요.">
+    <meta property="og:title" content="AI 넥서스 | AI 기술 가이드">
+    <meta property="og:description" content="인공지능을 내 도구로 만드는 가장 쉽고 빠른 방법">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body { font-family: "Pretendard Variable", Pretendard, sans-serif; }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+    </style>
+
+    </head>
+<body class="bg-slate-50 text-slate-900 antialiased min-h-screen flex flex-col">
+
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-2 cursor-pointer" onclick="Navigation.switchTab('main')">
+                <div class="w-9 h-9 bg-indigo-600 rounded-lg flex items-center justify-center text-white font-bold text-xl">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">AI NEXUS</span>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-medium text-slate-600">
+                <button onclick="Navigation.switchTab('trends')" class="nav-link hover:text-indigo-600 transition-colors cursor-pointer">기술 트렌드</button>
+                <button onclick="Navigation.switchTab('tools')" class="nav-link hover:text-indigo-600 transition-colors cursor-pointer">AI 툴 가이드</button>
+                <button onclick="Navigation.switchTab('tutorials')" class="nav-link hover:text-indigo-600 transition-colors cursor-pointer">실전 튜토리얼</button>
+                <button onclick="Navigation.switchTab('community')" class="nav-link hover:text-indigo-600 transition-colors cursor-pointer">커뮤니티</button>
+            </nav>
+
+            <div class="hidden md:flex items-center">
+                <button onclick="Navigation.switchTab('community')" class="bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-all shadow-sm hover:shadow">무료 구독하기</button>
+            </div>
+
+            <button id="mobile-menu-btn" class="md:hidden text-slate-600 focus:outline-none p-2">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-1">
+            <button onclick="Navigation.switchTab('trends')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600">기술 트렌드</button>
+            <button onclick="Navigation.switchTab('tools')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600">AI 툴 가이드</button>
+            <button onclick="Navigation.switchTab('tutorials')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600">실전 튜토리얼</button>
+            <button onclick="Navigation.switchTab('community')" class="block w-full text-left px-3 py-2 rounded-md text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-indigo-600">커뮤니티</button>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+
+        <section id="tab-main" class="tab-content active">
+            <div class="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
+                <div class="absolute inset-0 opacity-20">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?auto=format&fit=crop&w=1600&q=80" alt="AI Background" class="w-full h-full object-cover">
+                </div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight max-w-4xl mx-auto leading-tight">
+                        AI는 도구일 뿐입니다,<br><span class="bg-gradient-to-r from-blue-400 to-emerald-400 bg-clip-text text-transparent">당신의 능력을 무한대로</span> 확장하세요.
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto">
+                        막막했던 인공지능 기술, 개념 이해부터 실전 업무 활용까지 가장 쉽고 빠르게 마스터하는 AI 가이드 플랫폼, AI 넥서스입니다.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4">
+                        <button onclick="Navigation.switchTab('tutorials')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-4 rounded-xl shadow-lg transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                            무료 활용 가이드 보기
+                        </button>
+                        <button onclick="Navigation.switchTab('tools')" class="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold px-8 py-4 rounded-xl transition-all transform hover:-translate-y-0.5 cursor-pointer">
+                            인기 AI 툴 탐색
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="grid lg:grid-cols-2 gap-12 items-center">
+                        <div class="space-y-6">
+                            <span class="text-emerald-600 font-bold tracking-wider text-sm uppercase">The Problem</span>
+                            <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+                                AI가 대세라는데, 도대체 뭐부터 시작해야 할지 모르겠나요?
+                            </h2>
+                            <p class="text-lg text-slate-600 leading-relaxed">
+                                쏟아지는 새로운 뉴스, 복잡한 프롬프트 엔지니어링 용어 속에서 갈 길을 잃기 마련입니다. 수많은 도구 중 내 업무와 일상에 진짜로 도움을 주는 도구가 무엇인지 구분하기 어렵습니다.
+                            </p>
+                        </div>
+                        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 space-y-6">
+                            <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase">Our Solution</span>
+                            <h3 class="text-2xl font-bold text-slate-900">내 퇴근 시간을 앞당기는 실무 중심 케어</h3>
+                            <p class="text-slate-600 leading-relaxed">
+                                AI 넥서스는 복잡한 기술 용어는 과감히 걷어내고, 당장 오늘 퇴근 시간을 1시간 앞당길 수 있는 <strong>'실무 중심의 AI 활용 프로세스'</strong>를 제안합니다. 누구나 가볍게 복사하고 붙여넣는 행위만으로 AI 네이티브가 될 수 있도록 돕습니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-20 bg-slate-50 border-t border-b border-slate-200">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center max-w-3xl mx-auto mb-16">
+                        <h2 class="text-3xl font-bold text-slate-900">주요 핵심 가치</h2>
+                        <p class="mt-4 text-slate-600">성장과 생산성 혁신을 위해 고안된 세 가지 핵심 축</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6 text-xl">
+                                <i class="fa-solid fa-bolt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">쉬운 기술 해설</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm lg:text-base">복잡한 엔지니어링 논문 대신 트렌드의 핵심 흐름만 요약하여 AI의 전반적인 방향을 단숨에 이해시킵니다.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center text-emerald-600 mb-6 text-xl">
+                                <i class="fa-solid fa-briefcase"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">맞춤형 툴 추천</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm lg:text-base">수많은 생성형 AI 도구 중 내 직무 성격과 일상 프로세스에 딱 어울리는 도구만 선별하여 매칭합니다.</p>
+                        </div>
+                        <div class="bg-white p-8 rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600 mb-6 text-xl">
+                                <i class="fa-solid fa-code"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3">바로 쓰는 프롬프트</h3>
+                            <p class="text-slate-600 leading-relaxed text-sm lg:text-base">Copy & Paste 만으로 즉각 원하는 퀄리티의 결과물을 보장하는 정제된 마스터 프롬프트 템플릿을 제공합니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-20 bg-white">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                    <h2 class="text-3xl font-bold text-slate-900 mb-4">이미 수많은 동료들이 앞서나가고 있습니다.</h2>
+                    <p class="text-xl font-bold text-indigo-600 mb-12">이미 15,000+ 명의 직장인과 학생들이 AI 넥서스를 통해 업무 효율을 극대화하고 있습니다.</p>
+                    
+                    <div class="max-w-3xl mx-auto bg-slate-50 p-8 rounded-2xl border border-slate-100 relative">
+                        <i class="fa-solid fa-quote-left text-4xl text-slate-200 absolute top-6 left-6"></i>
+                        <p class="text-lg text-slate-700 italic relative z-10 leading-relaxed">
+                            "마케팅 문구 작성할 때마다 밤을 새웠는데, 여기서 알려준 프롬프트 템플릿 덕분에 기획안 작성 시간이 3시간에서 30분으로 줄었습니다! 이제 AI 없는 업무는 상상할 수가 없네요."
+                        </p>
+                        <span class="block mt-6 text-sm font-semibold text-slate-500">- 대기업 서비스기획자 김OO 님</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tab-trends" class="tab-content py-16 lg:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-16">
+                    <span class="text-indigo-600 font-bold text-sm tracking-wider uppercase">AI 기술 트렌드 라운지</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold mt-2">어려운 기술 용어는 가라,<br>흐름이 보이는 AI 동향</h1>
+                </div>
+
+                <div class="space-y-12 bg-white p-8 sm:p-12 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="border-b border-slate-100 pb-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">1. 거대언어모델(LLM)의 대중화</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            컴퓨터가 인간의 언어를 완벽하게 이해하고 문맥을 파악하는 시대가 도래했습니다. 단순 검색을 넘어 추론하고 지식을 재조합하는 LLM의 원리를 알기 쉽게 분석해 드립니다.
+                        </p>
+                    </div>
+                    <div class="border-b border-slate-100 pb-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">2. 멀티모달(Multimodal) AI 트렌드</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            텍스트 처리에 갇혀있던 인공지능이 이제 이미지, 음성, 비디오 신호를 종합적으로 이해하고 창작하기 시작했습니다. 시각 자료와 텍스트를 동시에 다루는 멀티모달의 최신 도약 수준을 다룹니다.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-3">3. AI Agent: 자율형 비서의 등장</h3>
+                        <p class="text-slate-600 leading-relaxed">
+                            사용자가 매번 명령하지 않아도 스스로 목표를 수립하고, 인터넷을 검색하고, 코딩을 수행하여 결과물을 가져오는 '에이전트' 시스템이 어떻게 일상을 바꾸게 될지 전망을 탐색합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button onclick="Navigation.switchTab('tools')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors cursor-pointer shadow">
+                        나에게 맞는 AI 툴 찾으러 가기 <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tab-tools" class="tab-content py-16 lg:py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-emerald-600 font-bold text-sm tracking-wider uppercase">스마트 AI 툴 디렉토리</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold mt-2">내 업무 능력을 200% 올려줄 인생 AI 툴 찾기</h1>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center font-bold">TXT</div>
+                                <h3 class="text-xl font-bold text-slate-900">ChatGPT vs Claude</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                대형 텍스트 기반 글쓰기 및 코딩 분석의 절대 존엄 2종을 해부합니다. 기획서 초안 및 방대한 자료 요약에 특화된 포인트를 짚어냅니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded w-fit">글쓰기 & 기획</span>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-10 h-10 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center font-bold">IMG</div>
+                                <h3 class="text-xl font-bold text-slate-900">Midjourney & SD</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                디자인 리소스를 획기적으로 줄여주는 고해상도 이미지 생성 솔루션. 프롬프트 하나로 상업용 수준의 일러스트를 확보하는 노하우를 제공합니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2.5 py-1 rounded w-fit">디자인 & 그래픽</span>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center space-x-3 mb-4">
+                                <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center font-bold">DATA</div>
+                                <h3 class="text-xl font-bold text-slate-900">Advanced Analytics</h3>
+                            </div>
+                            <p class="text-sm text-slate-600 leading-relaxed mb-4">
+                                엑셀 수식 작성, 복잡한 데이터 시각화를 자연어 명령 몇 줄로 자동 연산 처리하는 오피스 자동화 핵심 기능을 마스터합니다.
+                            </p>
+                        </div>
+                        <span class="text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded w-fit">데이터 & 오피스</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button onclick="Navigation.switchTab('tutorials')" class="bg-emerald-600 hover:bg-emerald-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors cursor-pointer shadow">
+                        실전 프롬프트 복사하기 <i class="fa-solid fa-copy ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tab-tutorials" class="tab-content py-16 lg:py-24">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                <div class="text-center mb-16">
+                    <span class="text-indigo-600 font-bold text-sm tracking-wider uppercase">초보자를 위한 AI 활용 마스터클래스</span>
+                    <h1 class="text-3xl sm:text-4xl font-bold mt-2">그대로 따라 하면 끝나는 AI 실전 튜토리얼</h1>
+                </div>
+
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wide">CASE 1. 완벽한 보고서 아웃라인 잡기</span>
+                        <h3 class="text-xl font-bold mt-1 mb-3">질문의 깊이를 더하는 3단계 역질문 유도 프롬프트</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            "내가 [주제]에 대한 기획서를 작성하려고 해. 최고의 아웃라인을 잡기 위해 네가 나에게 먼저 던져야 할 핵심적인 질문 3가지를 알려줘."
+                        </p>
+                    </div>
+
+                    <div class="bg-slate-900 text-slate-100 p-6 rounded-xl shadow-sm border border-slate-800">
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wide">CASE 2. 원어민 비즈니스 영어 메일 교정 인터랙티브 박스</span>
+                            <button onclick="App.copyPrompt(this)" class="text-xs bg-slate-800 hover:bg-slate-700 text-white px-3 py-1.5 rounded flex items-center space-x-1 transition-colors">
+                                <i class="fa-regular fa-copy"></i> <span>코드 복사</span>
+                            </button>
+                        </div>
+                        <div class="bg-slate-950 p-4 rounded text-sm font-mono text-slate-300 select-all overflow-x-auto" id="prompt-content">
+                            "당신은 글로벌 IT 기업의 수석 비즈니스 소통 전문가입니다. 다음 한국어 맥락에 알맞게 정중하고 격식 있는 영문 이메일 템플릿 2가지를 작성해 주세요. [맥락: 계약 일정 조율 요청]"
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wide">CASE 3. 최고급 아웃풋을 보장하는 '페르소나 부여법'</span>
+                        <h3 class="text-xl font-bold mt-1 mb-3">비전문가도 전문가 수준의 서술을 끌어내는 트릭</h3>
+                        <p class="text-slate-600 text-sm leading-relaxed">
+                            단순 질문 대신 "너는 10년 차 브랜드 마케터야"와 같은 명확한 배경 지식 및 제약 조건을 설계함으로써 답변의 퀄리티 편차를 줄이는 마술 같은 기법을 제시합니다.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center">
+                    <button onclick="Navigation.switchTab('community')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded-lg transition-colors cursor-pointer shadow">
+                        매주 새로운 템플릿 구독하기 <i class="fa-solid fa-bell ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="tab-community" class="tab-content py-16 lg:py-24 bg-slate-50">
+            <div class="max-w-md mx-auto px-4 sm:px-6 text-center">
+                <span class="text-indigo-600 font-bold text-sm tracking-wider uppercase">AI 네이티브 커뮤니티</span>
+                <h1 class="text-3xl font-bold mt-2 mb-4">가장 빠르게 변화하는 AI 트렌드,<br>함께 공부하면 외롭지 않습니다</h1>
+                <p class="text-slate-600 mb-8 text-sm sm:text-base">매주 월요일 아침, 검증된 실전 팁과 최신 AI 뉴스 큐레이션 서머리를 편안하게 메일함으로 배송해 드립니다.</p>
+
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm text-left">
+                    <form onsubmit="App.handleSubscribe(event)" class="space-y-4">
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-slate-700 mb-1">이메일 주소</label>
+                            <input type="email" id="email" required placeholder="example@domain.com" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all text-sm">
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition-colors shadow cursor-pointer text-sm">
+                            지금 무료로 뉴스레터 구독하기
+                        </button>
+                    </form>
+                    
+                    <div class="mt-6 pt-6 border-t border-slate-100">
+                        <span class="text-xs font-bold text-slate-400 block mb-3 uppercase tracking-wider">지난주 가장 반응 좋았던 리포트</span>
+                        <ul class="text-xs text-slate-600 space-y-2">
+                            <li><i class="fa-solid fa-circle-check text-emerald-500 mr-2"></i> 직장인을 위한 ChatGPT 고급 단축 워크플로우</li>
+                            <li><i class="fa-solid fa-circle-check text-emerald-500 mr-2"></i> 무료 이미지 생성 AI 미드저니 대체재 분석</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left sm:flex sm:justify-between sm:items-center">
+            <div class="mb-4 sm:mb-0">
+                <span class="text-white font-bold tracking-wider">AI NEXUS</span>
+                <p class="text-xs mt-1 text-slate-500">&copy; 2026 AI Nexus Guide. All rights reserved.</p>
+            </div>
+            <div class="flex justify-center space-x-6 text-sm">
+                <a href="#" class="hover:text-white transition-colors">이용약관</a>
+                <a href="#" class="hover:text-white transition-colors">개인정보처리방침</a>
+                <a href="#" class="hover:text-white transition-colors">문의하기</a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="success-modal" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4 backdrop-blur-sm">
+        <div class="bg-white rounded-2xl p-6 max-w-sm w-full text-center shadow-xl transform scale-95 transition-transform duration-300">
+            <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 text-xl">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-2">구독이 완료되었습니다!</h3>
+            <p class="text-sm text-slate-600 mb-6">매주 월요일 알찬 AI 실무 비법서로 찾아뵙겠습니다.</p>
+            <button onclick="App.closeModal()" class="w-full bg-slate-900 hover:bg-slate-800 text-white font-semibold py-2 rounded-lg transition-colors cursor-pointer text-sm">확인</button>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * Robust Coding을 위한 클라이언트 사이드 임베디드 모듈 시스템
+         */
+
+        // 보안 가이드라인: 민감 API 연동 시 하드코딩 절대 금지 (환경 변수 주석 참조)
+        // const CONFIG_API_KEY = "";
+
+        const Navigation = (() => {
+            const tabs = ['main', 'trends', 'tools', 'tutorials', 'community'];
+            
+            const switchTab = (tabId) => {
+                try {
+                    if (!tabs.includes(tabId)) {
+                        throw new Error(`존재하지 않는 라우트 슬러그 요청: ${tabId}`);
+                    }
+
+                    // 모든 탭 숨기기 및 스크롤 상단 이동
+                    tabs.forEach(id => {
+                        const target = document.getElementById(`tab-${id}`);
+                        if (target) target.classList.remove('active');
+                    });
+
+                    // 타겟 활성화
+                    const activeTarget = document.getElementById(`tab-${tabId}`);
+                    if (activeTarget) {
+                        activeTarget.classList.add('active');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+
+                    // 모바일 메뉴 열려있을 시 자동 닫기 안전 제어
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                } catch (error) {
+                    console.error("[Navigation Error] 화이트아웃 방지 제어: ", error);
+                    alert("페이지 전환 중 일시적인 오류가 발생했습니다. 메인으로 리다이렉트합니다.");
+                    // fallback
+                    const mainTab = document.getElementById('tab-main');
+                    if (mainTab) mainTab.classList.add('active');
+                }
+            };
+
+            return { switchTab };
+        })();
+
+        const App = (() => {
+            const copyPrompt = (buttonElement) => {
+                try {
+                    const promptText = document.getElementById('prompt-content').innerText;
+                    navigator.clipboard.writeText(promptText).then(() => {
+                        const originalText = buttonElement.innerHTML;
+                        buttonElement.innerHTML = `<i class="fa-solid fa-check"></i> <span>복사 완료</span>`;
+                        buttonElement.classList.replace('bg-slate-800', 'bg-emerald-600');
+                        
+                        setTimeout(() => {
+                            buttonElement.innerHTML = originalText;
+                            buttonElement.classList.replace('bg-emerald-600', 'bg-slate-800');
+                        }, 2000);
+                    }).catch(err => {
+                        throw err;
+                    });
+                } catch (err) {
+                    console.error("[Copy Error] 클립보드 제어 에러: ", err);
+                    alert("복사에 실패했습니다. 텍스트를 직접 드래그하여 복사해 주세요.");
+                }
+            };
+
+            const handleSubscribe = (event) => {
+                event.preventDefault();
+                try {
+                    const emailInput = document.getElementById('email');
+                    if (!emailInput || !emailInput.value) return;
+
+                    // 가상 구독 비동기 프로토타입 파이프라인 시뮬레이션
+                    console.log(`구독 등록 성공: ${emailInput.value}`);
+                    
+                    const modal = document.getElementById('success-modal');
+                    if (modal) {
+                        modal.classList.remove('hidden');
+                        emailInput.value = ''; // 폼 초기화
+                    }
+                } catch (error) {
+                    console.error("[Subscribe Error] 데이터 연동 결함 제어: ", error);
+                }
+            };
+
+            const closeModal = () => {
+                const modal = document.getElementById('success-modal');
+                if (modal) modal.classList.add('hidden');
+            };
+
+            return { copyPrompt, handleSubscribe, closeModal };
+        })();
+
+        // 모바일 메뉴 토글러 이벤트 바인딩
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileBtn && mobileMenu) {
+                mobileBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
